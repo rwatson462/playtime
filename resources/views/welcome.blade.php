@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-gradient-to-br from-slate-800 to-slate-900 text-white">
-        <div class="max-w-4xl mx-auto min-h-dvh bg-black/30 flex flex-col p-4 gap-y-4">
+        <div class="max-w-4xl ml-40 min-h-dvh bg-black/30 flex flex-col p-4 gap-y-4">
             <header class="min-h-20 flex justify-between items-center">
                 <p>Playtime</p>
             </header>
