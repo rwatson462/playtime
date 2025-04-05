@@ -1,9 +1,11 @@
 import ListDogs from './ListDogs'
 import ListCars from './ListCars'
+import CreateCar from './CreateCar'
 
 const Controllers = {
     ListDogs, 
-    ListCars,
+    ListCars, 
+    CreateCar,
 }
 
 export default Controllers
