@@ -1,24 +1,4 @@
-import {FormEvent} from "react";
-import CreateCar from "../../actions/App/Http/Controllers/CreateCar";
-import {useMutation, useQueryClient} from "@tanstack/react-query";
-
-function useCreateCar() {
-    const queryClient = useQueryClient()
-    const mutation = useMutation({
-        mutationFn: (event: FormEvent<HTMLFormElement>) => {
-            event.preventDefault()
-            const formData = new FormData(event.target)
-
-            return fetch(CreateCar().url, {
-                body: formData,
-                method: 'post',
-            })
-        },
-        onSuccess: () => queryClient.invalidateQueries({ queryKey: ['cars']})
-    })
-
-    return mutation.mutate
-}
+import {useCreateCar} from "../../lib/mutations/useCreateCar";
 
 export function CreateCarForm() {
     const createCar = useCreateCar()

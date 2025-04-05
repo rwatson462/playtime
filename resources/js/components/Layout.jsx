@@ -1,5 +1,6 @@
-import React from "react";
+import React, {Suspense} from "react";
 import {Link, Outlet} from "react-router";
+import {Loading} from "./Loading.js";
 
 export function Layout() {
     return (
@@ -9,7 +10,9 @@ export function Layout() {
             </header>
             <main className="flex-grow">
                 <h1 className="text-4xl font-black">This is a test</h1>
-                <Outlet/>
+                <Suspense fallback={<Loading/>}>
+                    <Outlet/>
+                </Suspense>
             </main>
 
             <footer className="min-h-20 flex items-center justify-center">
