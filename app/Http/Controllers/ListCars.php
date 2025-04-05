@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CarResource;
 use App\Models\Car;
-use Illuminate\Support\Collection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class ListCars extends Controller
 {
-    public function __invoke(): Collection
+    public function __invoke(): JsonResource
     {
-        return Car::all();
+        return new CarResource(Car::all());
     }
 }

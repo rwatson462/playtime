@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DogResource;
 use App\Models\Dog;
-use Illuminate\Support\Collection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class ListDogs extends Controller
 {
-    public function __invoke(): Collection
+    public function __invoke(): JsonResource
     {
-        return Dog::all();
+        return new DogResource(Dog::all());
     }
 }
