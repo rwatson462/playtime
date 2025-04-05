@@ -1,11 +1,20 @@
-import {Layout} from "./components/Layout.jsx";
-import {Outlet, RouterProvider} from "react-router";
+import {RouterProvider} from "react-router";
 import {router} from './lib/router'
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
-// React app starts here
+const client = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+            retry: false,
+        }
+    }
+})
 
 export function App() {
     return (
-        <RouterProvider router={router}/>
+        <QueryClientProvider client={client}>
+            <RouterProvider router={router}/>
+        </QueryClientProvider>
     )
 }

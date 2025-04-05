@@ -10,6 +10,6 @@ class ListCars extends Controller
 {
     public function __invoke(): JsonResource
     {
-        return new CarResource(Car::all());
+        return new CarResource(Car::query()->orderBy('make')->get());
     }
 }
