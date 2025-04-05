@@ -11,20 +11,10 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         <!-- Styles / Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vitereactrefresh
+        @vite(['resources/js/app.js'])
     </head>
     <body class="bg-gradient-to-br from-slate-800 to-slate-900 text-white">
-        <div class="max-w-4xl ml-40 min-h-dvh bg-black/30 flex flex-col p-4 gap-y-4">
-            <header class="min-h-20 flex justify-between items-center">
-                <p>Playtime</p>
-            </header>
-            <main class="flex-grow">
-                <h1 class="text-4xl font-black">This is a test</h1>
-            </main>
-
-            <footer class="min-h-20 flex items-center justify-center">
-                &copy; 2025 Source Pot
-            </footer>
-        </div>
+        <div id="root"></div>
     </body>
 </html>
