@@ -3,7 +3,7 @@ import {Link, Outlet} from "react-router";
 
 export function Layout() {
     return (
-        <div className="max-w-4xl ml-40 min-h-dvh bg-black/30 flex flex-col p-4 gap-y-4">
+        <div className="w-4xl mx-auto min-h-dvh bg-black/20 flex flex-col p-4 gap-y-4">
             <header className="min-h-20 flex justify-between items-center">
                 <p><Link to={'/'}>Playtime</Link></p>
             </header>
